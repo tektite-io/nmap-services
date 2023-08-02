@@ -10484,7 +10484,7 @@ unknown	6435/udp	0.000330
 heliosd	6440/tcp	0.000000	# heliosd daemon
 unknown	6441/udp	0.000330
 tarp	6442/tcp	0.000000	# Transitory Application Request Protocol
-sun-sr-https	6443/tcp	0.000000	# Service Registry Default HTTPS Domain
+kubernetes-api-server	6443/tcp	0.000000	# Kubernetes API Server
 sun-sr-https	6443/udp	0.000000	# Service Registry Default HTTPS Domain
 sge_qmaster	6444/tcp	0.000000	# sge-qmaster | Grid Engine Qmaster Service
 sge_qmaster	6444/udp	0.000330	# Grid Engine Qmaster Service
@@ -12605,7 +12605,7 @@ unknown	9859/udp	0.000330
 unknown	9869/udp	0.000661
 sapv1	9875/tcp	0.000076	# Session Announcement v1
 sapv1	9875/udp	0.000000	# Session Announcement v1
-sd	9876/tcp	0.000602	# Session Director
+istio-ctrlz-ui  9876/tcp	0.000602	# Istio ControlZ User Interface
 sd	9876/udp	0.004498	# Session Director
 x510	9877/tcp	0.000304	# The X.510 wrapper protocol
 unknown	9877/udp	0.001652
@@ -12818,10 +12818,13 @@ unknown	10243/tcp	0.000684
 unknown	10245/tcp	0.000076
 unknown	10246/tcp	0.000076
 unknown	10248/udp	0.000330
+kubelet-api 102450/tcp 000076 # Kubernetes Kubelet API
 apollo-relay	10252/tcp	0.000000	# Apollo Relay Port
 apollo-relay	10252/udp	0.000000	# Apollo Relay Port
 eapol-relay	10253/tcp	0.000000	# Relay of EAPOL frames
 unknown	10255/tcp	0.000076
+kube-controller-manager 10257/tcp 000076 # Kubernetes Controller Manager
+kube-scheduler 10259 000076 # Kubernetes Scheduler
 axis-wimp-port	10260/tcp	0.000000	# Axis WIMP Port
 axis-wimp-port	10260/udp	0.000330	# Axis WIMP Port
 tile-ml	10261/tcp	0.000000	# Tile remote machine learning
@@ -13995,17 +13998,23 @@ unknown	14978/udp	0.000330
 unknown	14982/udp	0.000330
 unknown	14991/udp	0.000661
 unknown	14998/udp	0.000330
-hydap	15000/tcp	0.001064	# Hypack Hydrographic Software Packages Data Acquisition | Hypack Data Aquisition
+envoy-admin	15000/tcp	0.001064	# Envoy Admin Interface
 hydap	15000/udp	0.000000	# Hypack Hydrographic Software Packages Data Acquisition
-unknown	15001/tcp	0.000152
+istio-envoy-outbound	15001/tcp	0.000152 # Used by Istio Envoy to handle outbound traffic
 onep-tls	15002/tcp	0.000380	# Open Network Environment TLS
 unknown	15003/tcp	0.000380
 unknown	15003/udp	0.000330
-unknown	15004/tcp	0.000228
+istio-debug	15004/tcp	0.000228 # Istio debug port
 unknown	15005/tcp	0.000076
-unknown	15006/udp	0.000330
+istio-envoy-inbound	15006/udp	0.000330 # Used by Istio Envoy to handle inbound traffic
 unknown	15009/udp	0.000330
+istio-xds-api 15010/tcp 000076 # Istio xDS API
+istio-xds-api 15012/tcp 000076 # Istio xDS API TLS
+istio-metrics-prometheus 15014/tcp 000076 # Istio Metrics to Prometheus
+istio-sidecar-validation-port 15017/tcp 000076 # Istio Sidecard Injection Validation Port   
 unknown	15015/udp	0.000330
+istio-statistics 15020/tcp 000330 # Istio Statistics
+istio-healthz 15021/tcp 000330 # Istio Healthz Check
 unknown	15022/udp	0.000330
 unknown	15041/udp	0.000661
 unknown	15044/udp	0.000330
@@ -14017,6 +14026,7 @@ unknown	15058/udp	0.000330
 unknown	15067/udp	0.000661
 unknown	15085/udp	0.000330
 unknown	15086/udp	0.000661
+istio-prometheus 15090/tcp 000661 # Istio Prometheus Query Port
 unknown	15093/udp	0.000330
 unknown	15100/udp	0.000330
 unknown	15107/udp	0.000330
